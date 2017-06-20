@@ -1,16 +1,37 @@
 document.getElementById('form').addEventListener('submit', handleSubmit)
+document.getElementById('clear').addEventListener('click', handleClear)
 
 var numbers = []
 
 function handleSubmit (e) {
+  console.log('submitting...')
   e.preventDefault()
   if (getNumber()) {
     numbers.push(getNumber())
     var newElement = createNumberListEl(getNumber())
-    document.getElementById('values').appendChild(newElement)
+    var numberList = document.getElementById('values')
+    numberList.insertBefore(newElement, numberList.firstChild)
     attachSum(sumOfArray(numbers))
   }
+  setInput("")
 }
+
+function handleClear (e) {
+  e.preventDefault()
+  console.log('handling clear')
+  numbers = []
+  node = document.getElementById('values')
+  while (node.hasChildNodes()) {
+    node.removeChild(node.lastChild)
+  }
+  attachSum(0)
+  setInput("")
+}
+
+function setInput (str) {
+  document.getElementById('input').value = str
+}
+
 
 function attachSum (n) {
   document.getElementById('current').innerHTML = n
