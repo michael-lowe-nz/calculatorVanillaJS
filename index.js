@@ -1,8 +1,9 @@
-document.getElementById('submit').addEventListener('click', addNumber)
+document.getElementById('form').addEventListener('submit', handleSubmit)
 
 var numbers = []
 
-function addNumber () {
+function handleSubmit (e) {
+  e.preventDefault()
   if (getNumber()) {
     numbers.push(getNumber())
     var newElement = createNumberListEl(getNumber())
