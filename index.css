@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+}
+
+input, button {
+  border: solid 2px black;
+  padding: 20px;
+  font-size: 2em;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: blue;
+  outline: none;
+}
