@@ -1,18 +1,19 @@
 import sumOfArray from './lib/sumOfArray'
+import getInputValue from './lib/getInputValue'
 
 document.getElementById('form').addEventListener('submit', handleSubmit)
 document.getElementById('clear').addEventListener('click', handleClear)
 
-var numbers = []
+let numbers = []
 
 function handleSubmit (e) {
   e.preventDefault()
-  if (getNumber()) {
-    numbers.push(getNumber())
-    var newElement = createNumberListEl(getNumber())
+  if (getInputValue()) {
+    numbers.push(getInputValue())
+    var newElement = createNumberListEl(getInputValue())
     var numberList = document.getElementById('values')
     numberList.insertBefore(newElement, numberList.firstChild)
-    attachSum(sumOfArray(numbers))
+    renderSum(sumOfArray(numbers))
   }
   setInput("")
 }
@@ -24,7 +25,7 @@ function handleClear (e) {
   while (node.hasChildNodes()) {
     node.removeChild(node.lastChild)
   }
-  attachSum(0)
+  renderSum(0)
   setInput("")
 }
 
@@ -33,23 +34,13 @@ function setInput (str) {
 }
 
 
-function attachSum (n) {
+function renderSum (n) {
   document.getElementById('current').innerHTML = n
 }
 
-function getNumber () {
-  var number = document.getElementById('input').value
-  if (number) {
-    return Number(number)
-  }
-  else {
-    return null
-  }
-}
-
 function createNumberListEl (n) {
-  var newElement = document.createElement('li')
-  var content = document.createTextNode(n)
+  const newElement = document.createElement('li')
+  const content = document.createTextNode(n)
   newElement.appendChild(content)
   return newElement
 }
