@@ -1,3 +1,5 @@
+var sumOfArray = require('./lib/sumArray')
+
 document.getElementById('form').addEventListener('submit', handleSubmit)
 document.getElementById('clear').addEventListener('click', handleClear)
 
@@ -52,10 +54,4 @@ function createNumberListEl (n) {
   var content = document.createTextNode(n)
   newElement.appendChild(content)
   return newElement
-}
-
-function sumOfArray (arr) {
-  return arr.reduce(function(previous, current){
-    return previous + current
-  },0)
 }
