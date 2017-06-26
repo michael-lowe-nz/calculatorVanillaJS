@@ -1,9 +1,14 @@
+$green: #2ecc71;
+$grey: #7f8c8d;
+$active: #34495e;
+$red: #e74c3c;
+
 body {
   font-family: sans-serif;
 }
 
 input, button {
-  border: solid 2px black;
+  border: solid 2px $grey;
   padding: 20px;
   font-size: 2em;
   background-color: white;
@@ -11,10 +16,22 @@ input, button {
 }
 
 input:focus {
-  border-color: blue;
+  border-color: $green;
   outline: none;
 }
 
 ul li {
   list-style: none;
+}
+
+.submit:hover {
+  background-color: $green;
+  color: white;
+  border-color: $green;
+}
+
+.clear:hover {
+  background-color: $red;
+  color: white;
+  border-color: $red;
 }
