@@ -3,9 +3,13 @@ import sumOfArray from './lib/sumOfArray'
 document.getElementById('form').addEventListener('submit', handleSubmit)
 document.getElementById('clear').addEventListener('click', handleClear)
 
+
 var numbers = []
 
 function handleSubmit (e) {
+  console.log('hello there')
+  const hello = () => console.log("ES6!!!!")
+  hello()
   e.preventDefault()
   if (getNumber()) {
     numbers.push(getNumber())
