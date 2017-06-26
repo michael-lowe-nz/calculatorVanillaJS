@@ -74,6 +74,10 @@ var _sumOfArray = __webpack_require__(1);
 
 var _sumOfArray2 = _interopRequireDefault(_sumOfArray);
 
+var _getInputValue = __webpack_require__(2);
+
+var _getInputValue2 = _interopRequireDefault(_getInputValue);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.getElementById('form').addEventListener('submit', handleSubmit);
@@ -82,18 +86,13 @@ document.getElementById('clear').addEventListener('click', handleClear);
 var numbers = [];
 
 function handleSubmit(e) {
-  console.log('hello there');
-  var hello = function hello() {
-    return console.log("ES6!!!!");
-  };
-  hello();
   e.preventDefault();
-  if (getNumber()) {
-    numbers.push(getNumber());
-    var newElement = createNumberListEl(getNumber());
+  if ((0, _getInputValue2.default)()) {
+    numbers.push((0, _getInputValue2.default)());
+    var newElement = createNumberListEl((0, _getInputValue2.default)());
     var numberList = document.getElementById('values');
     numberList.insertBefore(newElement, numberList.firstChild);
-    attachSum((0, _sumOfArray2.default)(numbers));
+    renderSum((0, _sumOfArray2.default)(numbers));
   }
   setInput("");
 }
@@ -105,7 +104,7 @@ function handleClear(e) {
   while (node.hasChildNodes()) {
     node.removeChild(node.lastChild);
   }
-  attachSum(0);
+  renderSum(0);
   setInput("");
 }
 
@@ -113,17 +112,8 @@ function setInput(str) {
   document.getElementById('input').value = str;
 }
 
-function attachSum(n) {
+function renderSum(n) {
   document.getElementById('current').innerHTML = n;
-}
-
-function getNumber() {
-  var number = document.getElementById('input').value;
-  if (number) {
-    return Number(number);
-  } else {
-    return null;
-  }
 }
 
 function createNumberListEl(n) {
@@ -140,13 +130,23 @@ function createNumberListEl(n) {
 "use strict";
 
 
-function sumOfArray(arr) {
+module.exports = function (arr) {
   return arr.reduce(function (previous, current) {
     return previous + current;
-  }, 0);
-}
+  });
+};
 
-module.exports = sumOfArray;
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var number = document.getElementById('input').value;
+  return number ? Number(number) : null;
+};
 
 /***/ })
 /******/ ]);
