@@ -1,4 +1,4 @@
-var sumOfArray = require('./lib/sumArray')
+import sumOfArray from './lib/sumOfArray'
 
 document.getElementById('form').addEventListener('submit', handleSubmit)
 document.getElementById('clear').addEventListener('click', handleClear)
@@ -6,7 +6,6 @@ document.getElementById('clear').addEventListener('click', handleClear)
 var numbers = []
 
 function handleSubmit (e) {
-  console.log('submitting...')
   e.preventDefault()
   if (getNumber()) {
     numbers.push(getNumber())
@@ -20,7 +19,6 @@ function handleSubmit (e) {
 
 function handleClear (e) {
   e.preventDefault()
-  console.log('handling clear')
   numbers = []
   node = document.getElementById('values')
   while (node.hasChildNodes()) {
@@ -40,8 +38,8 @@ function attachSum (n) {
 }
 
 function getNumber () {
-  number = document.getElementById('input').value
-  if (number !== null) {
+  var number = document.getElementById('input').value
+  if (number) {
     return Number(number)
   }
   else {
