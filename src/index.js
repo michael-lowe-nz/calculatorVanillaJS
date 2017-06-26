@@ -1,3 +1,5 @@
+import './index.scss'
+
 import sumOfArray from './lib/sumOfArray'
 import getInputValue from './lib/getInputValue'
 
@@ -21,7 +23,6 @@ function handleSubmit (e) {
 function handleClear (e) {
   e.preventDefault()
   numbers = []
-  console.log(document.getElementById('values'))
   const node = document.getElementById('values')
   while (node.hasChildNodes()) {
     node.removeChild(node.lastChild)
