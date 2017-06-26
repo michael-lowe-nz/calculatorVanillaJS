@@ -100,7 +100,8 @@ function handleSubmit(e) {
 function handleClear(e) {
   e.preventDefault();
   numbers = [];
-  node = document.getElementById('values');
+  console.log(document.getElementById('values'));
+  var node = document.getElementById('values');
   while (node.hasChildNodes()) {
     node.removeChild(node.lastChild);
   }
