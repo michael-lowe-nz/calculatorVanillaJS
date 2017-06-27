@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='index.css'>
+    <title>Adding Calculator</title>
   </head>
   <body>
-    <div>
-      <h1>Addition Calculator</h1>
-      <p>Add stuff real fast</p>
-    </div>
-    <form id="form">
-      <input id='input' type='tel' autocomplete="off" maxlength="14" autofocus></input>
-      <input type='submit' value='Add'></input>
-      <button id="clear">Clear</button>
-    </form>
-    <div id='app'>
-      <h2 id='current'>0</h2>
-      <ul id='values'></ul>
+    <div class="container">
+      <div class="input-box">
+        <form id="form">
+          <input id='input' type='tel' autocomplete="off" maxlength="14" autofocus></input>
+          <input class="submit" type='submit' value='+'></input>
+          <button id="clear" class="clear">Clear</button>
+        </form>
+      </div>
+      <div class="sum-area box">
+        <h2 id='current'>0</h2>
+      </div>
+      <div class="values-area box">
+        <ul id='values'></ul>
+      </div>
     </div>
   </body>
   <script type='text/javascript' src='bundle.js'></script>
