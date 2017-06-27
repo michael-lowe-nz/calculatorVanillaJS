@@ -1,4 +1,4 @@
-import './index.scss'
+import './scss/index.scss'
 
 import sumOfArray from './lib/sumOfArray'
 import getInputValue from './lib/getInputValue'
