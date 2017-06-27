@@ -1,18 +1,34 @@
 @import 'colors';
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .input-box {
-  width: 750px;
+  width: 100%;
   margin: 0 auto;
 }
 
 form {
   display: flex;
 }
+
+#input {
+  flex-grow: 2;
+}
+
+.clear, .submit {
+  width: 140px;
+}
+
+// .clear, .submit, #input {
+//   margin: 0 10px;
+// }
 
 // form, input, button {
 //   width: 100%;
@@ -30,14 +46,11 @@ form {
   border-color: $red;
 }
 
-input, button {
+input, button, .box {
   border: solid 2px $grey;
   padding: 20px;
-  width: 100%;
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: white;
-  box-sizing: border-box;
-  margin: 0 10px;
 }
 
 input:focus {
@@ -51,4 +64,9 @@ body {
 
 ul li {
   list-style: none;
+}
+
+.values-area {
+  height: 200px;
+  overflow-y: scroll;
 }
