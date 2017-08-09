@@ -1,3 +1,4 @@
+import { createStore } from 'redux'
 import './scss/index.scss'
 
 import sumOfArray from './lib/sumOfArray'
@@ -6,6 +7,9 @@ import getInputValue from './lib/getInputValue'
 document.getElementById('form').addEventListener('submit', handleSubmit)
 document.getElementById('clear').addEventListener('click', handleClear)
 
+const initialState = {
+  numbers: []
+}
 let numbers = []
 
 function handleSubmit (e) {
@@ -34,7 +38,6 @@ function handleClear (e) {
 function setInput (str) {
   document.getElementById('input').value = str
 }
-
 
 function renderSum (n) {
   document.getElementById('current').innerHTML = n
