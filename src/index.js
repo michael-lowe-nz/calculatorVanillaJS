@@ -26,17 +26,18 @@ function renderState (state) {
 }
 
 function renderView (numbers) {
-  const numberList = document.getElementById('values')
-  numbers.forEach((number) => {
-    const newElement = document.createElement('li')
-    const content = document.createTextNode(number)
-    newElement.appendChild(content)
-    numberList.insertBefore(newElement, numberList.firstChild)
-  })
-  document.getElementById('current').innerHTML = sumOfArray(numbers)
-}
-
-function renderSum (numbers) {
+  if (numbers) {
+    numbers.forEach((number) => {
+      const numberList = document.getElementById('values')
+      const newElement = document.createElement('li')
+      const content = document.createTextNode(number)
+      newElement.appendChild(content)
+      numberList.insertBefore(newElement, numberList.firstChild)
+    })
+    document.getElementById('current').innerHTML = sumOfArray(numbers)
+  } else {
+    document.getElementById('current').innerHTML = ""
+  }
 }
 
 function handleSubmit (e) {

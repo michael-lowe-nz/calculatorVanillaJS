@@ -7,7 +7,7 @@ module.exports = (state, action) => {
         ]
       })
     case 'CLEAR_NUMBERS':
-      return Object.assign({})
+      return Object.assign({}, {numbers:[]})
     default:
       return state
   }
