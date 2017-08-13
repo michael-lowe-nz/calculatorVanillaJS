@@ -4,70 +4,11 @@
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.input-box {
-  width: 100%;
-  margin: 0 auto;
-}
-
-form {
-  display: flex;
-}
-
-#input {
-  flex-grow: 2;
-}
-
-.clear, .submit {
-  width: 140px;
-}
-
-// .clear, .submit, #input {
-//   margin: 0 10px;
-// }
-
-// form, input, button {
-//   width: 100%;
-// }
-
-.submit:hover {
-  background-color: $green;
-  color: white;
-  border-color: $green;
-}
-
-.clear:hover {
-  background-color: $red;
-  color: white;
-  border-color: $red;
-}
-
-input, button, .box {
-  border: solid 2px $grey;
-  padding: 20px;
-  font-size: 1.5em;
-  background-color: white;
-}
-
-input:focus {
-  border-color: $green;
-  outline: none;
-}
-
 body {
-  font-family: sans-serif;
 }
 
-ul li {
-  list-style: none;
-}
-
-.values-area {
-  height: 200px;
+input, button {
   width: 100%;
-  overflow-y: scroll;
+  display: block;
+
 }

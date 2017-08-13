@@ -15,8 +15,7 @@ const initialState = {
 const { subscribe, dispatch, getState } = createStore(reducer, initialState)
 
 subscribe(() => {
-  const state = getState()
-  renderState(state)
+  renderState(getState())
 })
 
 dispatch({type: 'INIT'})
@@ -55,15 +54,4 @@ function handleClear (e) {
 
 function setInput (str) {
   document.getElementById('input').value = str
-}
-
-// function renderSum (n) {
-//   document.getElementById('current').innerHTML = n
-// }
-
-function createNumberListEl (n) {
-  const newElement = document.createElement('li')
-  const content = document.createTextNode(n)
-  newElement.appendChild(content)
-  return newElement
 }
