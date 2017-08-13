@@ -980,6 +980,10 @@ clone@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
 
+clone@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.1.tgz#d217d1e961118e3ac9a4b8bba3285553bf647cdb"
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -4237,9 +4241,9 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@^3.0.0:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.5.2.tgz#a9601066e23af3c80f3bf9758fd794ca9778f251"
+webpack@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.5.4.tgz#5583eb263ed27b78b5bd17bfdfb0eb1b1cd1bf81"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"

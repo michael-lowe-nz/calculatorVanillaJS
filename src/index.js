@@ -42,7 +42,7 @@ function renderView (numbers) {
 
 function handleSubmit (e) {
   e.preventDefault()
-  if (!isNaN(getInputValue())) {
+  if (!isNaN(getInputValue()) && getInputValue()) {
     dispatch({type: 'ADD_NUMBER', payload: getInputValue()})
   }
   setInput("")
