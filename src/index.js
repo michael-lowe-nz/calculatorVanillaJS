@@ -42,7 +42,9 @@ function renderView (numbers) {
 
 function handleSubmit (e) {
   e.preventDefault()
-  dispatch({type: 'ADD_NUMBER', payload: getInputValue()})
+  if (!isNaN(getInputValue())) {
+    dispatch({type: 'ADD_NUMBER', payload: getInputValue()})
+  }
   setInput("")
 }
 
@@ -50,6 +52,10 @@ function handleClear (e) {
   e.preventDefault()
   dispatch({type: 'CLEAR_NUMBERS'})
   setInput("")
+}
+
+function handleRemove(e) {
+  console.log('removing node')
 }
 
 function setInput (str) {
