@@ -9,7 +9,7 @@ document.getElementById('form').addEventListener('submit', handleSubmit)
 document.getElementById('clear').addEventListener('click', handleClear)
 
 const initialState = {
-  numbers: [1, 8, 9]
+  numbers: []
 }
 
 const { subscribe, dispatch, getState } = createStore(reducer, initialState)
@@ -26,6 +26,7 @@ function renderState (state) {
 }
 
 function renderView (numbers) {
+  document.getElementById('values').innerHTML = ""
   if (numbers) {
     numbers.forEach((number) => {
       const numberList = document.getElementById('values')

@@ -1,1 +1,1 @@
-module.exports = (arr) => arr.reduce((previous, current) => previous + current)
+module.exports = (arr) => arr.length ? arr.reduce((previous, current) => previous + current) : 0

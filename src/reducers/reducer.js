@@ -1,14 +1,15 @@
+import clone from 'clone'
+
 module.exports = (state, action) => {
+  const newState = clone(state)
   switch (action.type) {
     case 'ADD_NUMBER':
-      return Object.assign({}, state, {
-        numbers: [
-          ...state.numbers, action.payload
-        ]
-      })
+      newState.numbers.push(action.payload)
+      return newState
     case 'CLEAR_NUMBERS':
-      return Object.assign({}, {numbers:[]})
+      newState.numbers.splice(0, newState.numbers.length)
+      return newState
     default:
-      return state
+      return newState
   }
 }
