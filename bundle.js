@@ -742,11 +742,18 @@ function renderState(state) {
 function renderView(numbers) {
   document.getElementById('values').innerHTML = "";
   if (numbers) {
-    numbers.forEach(function (number) {
+    numbers.forEach(function (number, index) {
       var numberList = document.getElementById('values');
       var newElement = document.createElement('li');
       var content = document.createTextNode(number);
       newElement.appendChild(content);
+      newElement.innerHTML += '<span id="remove' + index + '">x</span>';
+      newElement.addEventListener('click', function () {
+        dispatch({
+          type: 'REMOVE_NUMBER',
+          payload: index
+        });
+      });
       numberList.insertBefore(newElement, numberList.firstChild);
     });
     document.getElementById('current').innerHTML = (0, _sumOfArray2.default)(numbers);
@@ -1405,6 +1412,9 @@ module.exports = function (state, action) {
   switch (action.type) {
     case 'ADD_NUMBER':
       newState.numbers.push(action.payload);
+      return newState;
+    case 'REMOVE_NUMBER':
+      newState.numbers.splice(action.payload, 1);
       return newState;
     case 'CLEAR_NUMBERS':
       newState.numbers.splice(0, newState.numbers.length);
