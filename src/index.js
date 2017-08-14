@@ -34,7 +34,6 @@ function renderView (numbers) {
       newElement.appendChild(content)
       newElement.innerHTML += `<span id="remove${index}">x</span>`
       newElement.addEventListener('click', function() {
-        console.log('clicked delete')
         dispatch({
           type: 'REMOVE_NUMBER',
           payload: index
