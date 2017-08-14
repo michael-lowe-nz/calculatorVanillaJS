@@ -27,11 +27,19 @@ function renderState (state) {
 function renderView (numbers) {
   document.getElementById('values').innerHTML = ""
   if (numbers) {
-    numbers.forEach((number) => {
+    numbers.forEach((number, index) => {
       const numberList = document.getElementById('values')
       const newElement = document.createElement('li')
       const content = document.createTextNode(number)
       newElement.appendChild(content)
+      newElement.innerHTML += `<span id="remove${index}">x</span>`
+      newElement.addEventListener('click', function() {
+        console.log('clicked delete')
+        dispatch({
+          type: 'REMOVE_NUMBER',
+          payload: index
+        })
+      })
       numberList.insertBefore(newElement, numberList.firstChild)
     })
     document.getElementById('current').innerHTML = sumOfArray(numbers)

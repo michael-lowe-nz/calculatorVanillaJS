@@ -6,6 +6,9 @@ module.exports = (state, action) => {
     case 'ADD_NUMBER':
       newState.numbers.push(action.payload)
       return newState
+    case 'REMOVE_NUMBER':
+      newState.numbers.splice(action.payload, 1)
+      return newState
     case 'CLEAR_NUMBERS':
       newState.numbers.splice(0, newState.numbers.length)
       return newState
