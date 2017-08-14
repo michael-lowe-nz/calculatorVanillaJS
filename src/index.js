@@ -34,16 +34,11 @@ function renderView (numbers) {
       newElement.appendChild(content)
       newElement.innerHTML += `<span id="remove${index}">x</span>`
       newElement.addEventListener('click', function() {
-        dispatch({
-          type: 'REMOVE_NUMBER',
-          payload: index
-        })
+        dispatch({type: 'REMOVE_NUMBER', payload: index})
       })
       numberList.insertBefore(newElement, numberList.firstChild)
     })
     document.getElementById('current').innerHTML = sumOfArray(numbers)
-  } else {
-    document.getElementById('current').innerHTML = ""
   }
 }
 
@@ -51,18 +46,14 @@ function handleSubmit (e) {
   e.preventDefault()
   if (!isNaN(getInputValue()) && getInputValue()) {
     dispatch({type: 'ADD_NUMBER', payload: getInputValue()})
+    setInput("")
   }
-  setInput("")
 }
 
 function handleClear (e) {
   e.preventDefault()
   dispatch({type: 'CLEAR_NUMBERS'})
   setInput("")
-}
-
-function handleRemove(e) {
-  console.log('removing node')
 }
 
 function setInput (str) {
