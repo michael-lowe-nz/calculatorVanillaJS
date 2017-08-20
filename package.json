@@ -36,6 +36,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "bulma": "^0.5.1",
     "global": "^4.3.2",
     "lodash": "^4.17.4",
     "redux": "^3.7.2"

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Adding Calculator</title>
+    <link rel='stylesheet' type="text/css" href="./../node_modules/bulma/css/bulma.css"></link>
   </head>
   <body>
     <div class="container">
@@ -12,11 +13,54 @@
           <button id="clear" class="clear">c</button>
         </form>
       </div>
-      <div class="sum-area box">
-        <h2 id='current'>0</h2>
-      </div>
-      <div class="values-area box">
-        <ul id='values'></ul>
+      <div class="container">
+        <div class="section">
+          <div class="columns">
+            <div class="column is-6">
+              <div class="sum-area box">
+                <h2 id='current'>0</h2>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="values-area box">
+                <ul id='values'></ul>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-mobile">
+            <div class="column is-4">
+              <button class="button">7</button>
+            </div>
+            <div class="column is-4">
+              <button class="button">8</button>
+            </div>
+            <div class="column is-4">
+              <button class="button">9</button>
+            </div>
+          </div>
+          <div class="columns is-mobile">
+            <div class="column is-4">
+              <button class="button">4</button>
+            </div>
+            <div class="column is-4">
+              <button class="button">5</button>
+            </div>
+            <div class="column is-4">
+              <button class="button">6</button>
+            </div>
+          </div>
+          <div class="columns is-mobile">
+            <div class="column is-4">
+              <button class="button">1</button>
+            </div>
+            <div class="column is-4">
+              <button class="button">2</button>
+            </div>
+            <div class="column is-4">
+              <button class="button">3</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
