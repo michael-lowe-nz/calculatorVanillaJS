@@ -32,7 +32,15 @@ function renderView (numbers) {
       const newElement = document.createElement('li')
       const content = document.createTextNode(number)
       newElement.appendChild(content)
-      newElement.innerHTML += `<span id="remove${index}">x</span>`
+      newElement.innerHTML += `
+        <div class="level">
+          <div class="level-left">
+            <button class="delete"></button>
+          </div>
+          <div class="level-right">
+          </div>
+        </div>
+        `
       newElement.addEventListener('click', function() {
         dispatch({type: 'REMOVE_NUMBER', payload: index})
       })
